@@ -1,0 +1,58 @@
+{
+  "expo": {
+    "name": "ShakeGuard",
+    "slug": "shakeguard",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/shakeguardicon.png",
+    "scheme": "shakeguard",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "background-fetch"
+        ]
+      },
+      "bundleIdentifier": "com.shakeguard.app"
+    },
+    "android": {
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_BACKGROUND_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_LOCATION"
+      ],
+      "package": "com.shakeguard.app",
+      "icon": "./assets/images/shakeguardicon.png"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/images/shakeguardicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-web-browser",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUseUsageDescription": "ShakeGuard needs location access to monitor earthquake activity, provide emergency location reporting, and send early warnings based on your location.",
+          "locationAlwaysPermission": "ShakeGuard needs background location access to continuously monitor for earthquake activity and provide early warnings to nearby users.",
+          "locationWhenInUsePermission": "ShakeGuard needs location access to monitor earthquake activity, provide emergency location reporting, and calculate seismic wave arrival times for your area.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
